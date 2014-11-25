@@ -1,5 +1,8 @@
 Ext.require('Ext.slider.*');
 
+var criterion = ["Price", "Color", "Speed"];
+var criterionValue = new Array(criterion.length);
+
 var a = 0.5, b = 0.5, c = 0.5;
 
 Ext.onReady(function(){
@@ -13,7 +16,7 @@ Ext.onReady(function(){
         maxValue: 100,
 		value: 50,
         tipText: function(thumb){
-			a = thumb.value/100;
+			criterionValue[0] = thumb.value/100;
 			return Ext.String.format('<b>{0}% важность</b>', thumb.value);
         }
 		
@@ -28,7 +31,7 @@ Ext.onReady(function(){
         maxValue: 100,
 		value: 50,
         tipText: function(thumb){
-			b = thumb.value/100;
+			criterionValue[1] = thumb.value/100;
             return Ext.String.format('<b>{0}% важность</b>', thumb.value);
         }
     });
@@ -42,7 +45,7 @@ Ext.onReady(function(){
         maxValue: 100,
 		value: 50,
         tipText: function(thumb){
-			c = thumb.value/100;
+			criterionValue[2] = thumb.value/100;
             return Ext.String.format('<b>{0}% важность</b>', thumb.value);
         }
     });
