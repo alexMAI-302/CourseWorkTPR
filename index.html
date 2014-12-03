@@ -36,21 +36,21 @@
 			<td>
 				<h4>Set ratio "Price-Color": </h4>
 				<span class="gradient1" style="padding:0px 50px;">Price</span><span class="gradient2" style="padding:0px 50px;">Color</span>
-				<div id="custom-tip-slider1"></div>
+				<div id='PriceColorSlider')></div>
 				<br/>
 			</td>
 			
 			<td>
 				<h4>Set ratio "Price-Speed": </h4>
 				<span class="gradient1" style="padding:0px 50px;">Price&nbsp;</span><span class="gradient2" style="padding:0px 50px;">Speed</span>
-				<div id="custom-tip-slider2"></div>
+				<div id='ColorSlider'></div>
 				<br/>
 			</td>
 			
 			<td>
 				<h4>Set ratio "Color-Speed": </h4>
 				<span class="gradient1" style="padding:0px 50px;">Color&nbsp;&nbsp;</span><span class="gradient2" style="padding:0px 50px;">Speed</span>
-				<div id="custom-tip-slider3"></div>
+				<div id='SpeedSlider'></div>
 				<br/>
 			</td>
 		</tr>
@@ -66,7 +66,6 @@
 		в четвертом столбце которой находятся <q>важности критериев</q>.
 	</p>
 	
-	
 	<p><input type = "button" value = "Recalculate document" onclick="ReCalculate();"></p>
 	
 	<!-- extra space for scrolling -->
@@ -77,6 +76,11 @@
 
 	function ReCalculate()
 	{
+		for(i=0; i<SlidersCount; i++)
+			criterionValue[i] = Ext.getCmp(criterionSliders[i]+'Slider').getValue()/100;
+		alert(criterionSliders);
+		alert(criterionValue);
+
 		var RatioData = new Array(criterion.length, criterion.length+2);
 			for(i=0; i<criterion.length; i++)
 				RatioData[i] = new Array(criterion.length+2);
@@ -143,8 +147,8 @@
 		var	win1 = Ext.create('widget.window', {
 					title: 'Веса критериев и их важность',
 					closeAction: 'hide',
-					width: 550,
-					height: 150,
+					width: 110*(criterion.length+2),
+					height: 50*criterion.length+50,
 					items: [grid]
 			});
 		win1.show();
