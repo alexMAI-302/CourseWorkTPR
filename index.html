@@ -10,70 +10,23 @@
 
     <script type="text/javascript" src="../../examples/shared/include-ext.js"></script>
     <script type="text/javascript" src="../../examples/shared/options-toolbar.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-	
-	<style>
-	   .gradient1 {
-		background: #FFFFFF; 
-		background: linear-gradient(to left, #ADD8E6, #FF0000);
-		padding: 10px;
-	   }
-    </style>
-	
-    <style>
-	   .gradient2 {
-		background: #FFFFFF; 
-		background: linear-gradient(to right, #ADD8E6, #FF0000);
-		padding: 10px;
-	   }
-    </style>
-	
+    <script type="text/javascript" src="app.js"></script>	
 </head>
 <body>
     
-	<table>
-		<tr>
-			<td>
-				<h4>Set ratio "Price-Color": </h4>
-				<span class="gradient1" style="padding:0px 50px;">Price</span><span class="gradient2" style="padding:0px 50px;">Color</span>
-				<div id='PriceColorSlider')></div>
-				<br/>
-			</td>
-			
-			<td>
-				<h4>Set ratio "Price-Speed": </h4>
-				<span class="gradient1" style="padding:0px 50px;">Price&nbsp;</span><span class="gradient2" style="padding:0px 50px;">Speed</span>
-				<div id='ColorSlider'></div>
-				<br/>
-			</td>
-			
-			<td>
-				<h4>Set ratio "Color-Speed": </h4>
-				<span class="gradient1" style="padding:0px 50px;">Color&nbsp;&nbsp;</span><span class="gradient2" style="padding:0px 50px;">Speed</span>
-				<div id='SpeedSlider'></div>
-				<br/>
-			</td>
-		</tr>
-	</table>
-	
 	<p>
-		Выше предоставлены слайдеры, с помощью которых можно менять<br>
-		соотношения между критериями <q>цена</q>, <q>скорость</q> и <q>цвет.</q>
+		Ниже предоставлены слайдеры, с помощью которых можно менять<br>
+		соотношения между критериями.</q>
 	</p>
 	<p>
 		Для проведения необходимых вычислений нажмите на кнопку ниже. <br>
-		Результатом работы программного продукта является таблица 3х4, <br>
-		в четвертом столбце которой находятся <q>важности критериев</q>.
+		Результатом работы программного продукта является таблица, <br>
+		в последнем столбце которой находятся <q>важности критериев</q>.
 	</p>
 	
 	<p><input type = "button" value = "Recalculate document" onclick="ReCalculate();"></p>
 	
-	<!-- extra space for scrolling -->
-    <div style="height:150px;"></div>
-	
-	
 <script language = "JavaScript">
-
 	function ReCalculate()
 	{
 		for(i=0; i<SlidersCount; i++)
@@ -154,6 +107,5 @@
 		win1.show();
 	}
 </script>
-	
 </body>
 </html>

@@ -1,5 +1,4 @@
 Ext.require('Ext.slider.*');
-
 var criterion = ["Price", "Color", "Speed", "Engine", "Двери"];
 
 var SlidersCount;
@@ -24,25 +23,23 @@ var criterionValue = new Array(SlidersCount);
     for(i = 0; i < SlidersCount; i++)
         criterionValue[i] = 0.5;
 
-
 Ext.onReady(function(){
-	for(i = 0; i < SlidersCount; i++)
+    for(i = 0; i < SlidersCount; i++)
     {
-
-       Ext.create('Ext.slider.Single', {
-            renderTo: Ext.getBody(), 
-            hideLabel: true,
-            clickToChange: true,
-            width: 260,
-            increment: 1,
-            minValue: 0,
-            maxValue: 100,
-            value: 50,
-            id: criterionSliders[i] + 'Slider',
-            tipText: function(thumb){
-                return Ext.String.format('<b>{0}% важность</b>', thumb.value);
-            }
-
+        Ext.create('Ext.slider.Single', {
+                renderTo: Ext.getBody(), 
+                hideLabel: false,
+                fieldLabel: 'Установите соотношение '+ criterionSliders[i],
+                clickToChange: true,
+                width: 350,
+                increment: 1,
+                minValue: 0,
+                maxValue: 100,
+                value: 50,
+                id: criterionSliders[i] + 'Slider',
+                tipText: function(thumb){
+                    return Ext.String.format('<b>{0}% важность</b>', thumb.value);
+                }
         });
     }
 });
