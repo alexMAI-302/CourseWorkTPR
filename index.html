@@ -30,8 +30,10 @@
 	function ReCalculate()
 	{
 		for(i=0; i<SlidersCount; i++)
-			criterionValue[i] = Ext.getCmp(LCriterion[i] + RCriterion[i]+'Slider').getValue()/100;
-		
+			criterionValue[i] = Ext.getCmp(criterionSliders[i]+'Slider').getValue()/100;
+		alert(criterionSliders);
+		alert(criterionValue);
+
 		var RatioData = new Array(criterion.length, criterion.length+2);
 			for(i=0; i<criterion.length; i++)
 				RatioData[i] = new Array(criterion.length+2);
